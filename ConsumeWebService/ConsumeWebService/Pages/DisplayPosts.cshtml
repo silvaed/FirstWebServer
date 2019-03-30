@@ -1,0 +1,28 @@
+﻿@page
+@model ConsumeWebService.Pages.DisplayPostsModel
+@{
+}
+
+
+<form method="post">
+    <label asp-for=Id></label>
+    <input asp-for="Id" />
+
+    <button type="submit">Get the Post</button>
+</form>
+
+@if (Model.Post != null)
+{
+
+    <h3> Post ID @Model.Post.Id</h3>
+
+    <h4> Post Title @Model.Post.Title</h4>
+
+    <body>
+        @Model.Post.Body
+    </body>
+}
+else
+{
+<h3> No Post yet</h3>
+}
